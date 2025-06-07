@@ -1,16 +1,10 @@
-import { useTheme } from "@/providers/themeProvider";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Sun, Moon } from "lucide-react";
 import { SiGithub } from '@icons-pack/react-simple-icons'
+import { ThemeToggle } from "./theme-toggle";
 
 export function Navbar() {
-    const { theme, setTheme } = useTheme();
     const [user] = useState<{ name: string } | null>(null); // Replace with actual user state management
-
-    const toggleTheme = () => {
-        setTheme(theme === "dark" ? "light" : "dark");
-    };
 
     return (
         <nav className="flex items-center px-6 py-4 bg-background border-b border-border shadow-sm">
@@ -35,19 +29,7 @@ export function Navbar() {
                 </Button>
 
                 {/* Theme toggle */}
-                <Button
-                    variant="ghost"
-                    onClick={toggleTheme}
-                    aria-label="Toggle theme"
-                    className="p-2 rounded-full hover:bg-primary/10 transition-colors flex items-center justify-center"
-                    title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-                >
-                    {theme === "dark" ? (
-                        <Sun className="w-6 h-6 text-yellow-400 animate-pulse" />
-                    ) : (
-                        <Moon className="w-6 h-6 text-gray-700 animate-pulse" />
-                    )}
-                </Button>
+                <ThemeToggle />
 
                 {/* Auth buttons or user info */}
                 {user ? (
