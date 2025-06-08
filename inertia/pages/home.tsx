@@ -1,3 +1,4 @@
+import { Hero } from '@/components/hero'
 import { Navbar } from '@/components/navbar'
 import { Head } from '@inertiajs/react'
 
@@ -6,6 +7,7 @@ export default function Home() {
     <>
       <Head title="Homepage" />
       <Navbar />
+      <Hero />
     </>
   )
 }

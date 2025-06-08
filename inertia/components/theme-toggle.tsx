@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { useTheme } from "@/providers/themeProvider";
 
-export function ThemeToggle() {
+export function ThemeToggle({ text }: { text?: string }) {
   const { setTheme } = useTheme()
 
   return (
@@ -19,6 +19,7 @@ export function ThemeToggle() {
           <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90 text-yellow-600" />
           <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0 text-gray-300" />
           <span className="sr-only">Toggle theme</span>
+          {text && <span className="ml-2">{text}</span>}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
