@@ -3,14 +3,12 @@ import { Button } from "@/components/ui/button"
 import { SiGithub } from "@icons-pack/react-simple-icons"
 import { ThemeToggle } from "./theme-toggle"
 import { Menu, X } from "lucide-react"
+import { Link } from '@inertiajs/react'
 import { AnimatePresence, motion } from "framer-motion"
 
 import {
   NavigationMenu,
-  NavigationMenuItem,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuContent,
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu"
 
@@ -53,9 +51,9 @@ export function Navbar() {
             <NavigationMenuList>
               {menuItems.map(({ label, href }) => (
                 <NavigationMenuLink asChild>
-                    <a href={href} className="px-4 py-2 block">
-                    {label}
-                    </a>
+                    <Link href={href} className="px-4 py-2 block">
+                        {label}
+                    </Link>
                 </NavigationMenuLink>
               ))}
             </NavigationMenuList>
@@ -120,14 +118,14 @@ export function Navbar() {
             className="md:hidden mt-4 flex flex-col space-y-4 items-center"
           >
             {menuItems.map(({ label, href }) => (
-              <a
+              <Link
                 key={href}
                 href={href}
                 className="block w-full text-center rounded-md px-4 py-2 text-primary hover:bg-primary/10 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {label}
-              </a>
+              </Link>
             ))}
 
             <Button
