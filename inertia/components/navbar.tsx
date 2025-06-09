@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { SiGithub } from '@icons-pack/react-simple-icons'
+import { SiGithub } from 'react-icons/si'
 import { ThemeToggle } from './theme-toggle'
 import { Menu, X } from 'lucide-react'
 import { Link } from '@inertiajs/react'

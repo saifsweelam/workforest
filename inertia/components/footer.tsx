@@ -1,4 +1,4 @@
-import { SiGithub, SiX } from '@icons-pack/react-simple-icons'
+import { SiGithub, SiX } from 'react-icons/si'
 import { Link } from '@inertiajs/react'
 import { Mail } from 'lucide-react'
 

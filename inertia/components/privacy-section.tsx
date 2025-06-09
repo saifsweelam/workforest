@@ -1,7 +1,7 @@
 import { ShieldCheck } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
-import { SiGithub } from '@icons-pack/react-simple-icons'
+import { SiGithub } from 'react-icons/si'
 
 const content = [
     {
