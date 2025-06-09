@@ -1,6 +1,7 @@
 import { FeaturesSection } from '@/components/features-section'
 import { Hero } from '@/components/hero'
 import { Navbar } from '@/components/navbar'
+import { StatsSection } from '@/components/stats-section'
 import { Separator } from '@/components/ui/separator'
 import { Head } from '@inertiajs/react'
 
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <Separator />
       <FeaturesSection />
+      <StatsSection />
     </>
   )
 }

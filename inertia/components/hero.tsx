@@ -5,7 +5,7 @@ import { Sparkles } from "./sparkles"
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden py-28 px-6 md:px-12 lg:px-24 bg-gradient-to-b from-background to-muted/30">
+    <section className="relative overflow-hidden min-h-screen py-56 px-6 md:px-12 lg:px-24 bg-gradient-to-b from-background to-muted/30">
       {/* Background visual elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div

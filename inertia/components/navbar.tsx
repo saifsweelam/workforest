@@ -38,7 +38,7 @@ export function Navbar() {
   const menuItems = user ? loggedInItems : loggedOutItems
 
   return (
-    <nav className="bg-background border-b border-border shadow-sm px-6 py-4">
+    <nav className="bg-background border-b border-border shadow-sm px-6 py-4 fixed w-[100%] top-0 z-50">
       <div className="flex items-center justify-between">
         {/* App name */}
         <div className="text-2xl font-bold text-primary cursor-default select-none">
