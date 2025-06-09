@@ -9,17 +9,17 @@ import { Separator } from '@/components/ui/separator'
 import { Head } from '@inertiajs/react'
 
 export default function Home() {
-  return (
-    <>
-      <Head title="Homepage" />
-      <Navbar />
-      <Hero />
-      <Separator />
-      <FeaturesSection />
-      <StatsSection />
-      <PrivacySection />
-      <CTASection />
-      <Footer />
-    </>
-  )
+    return (
+        <>
+            <Head title="Homepage" />
+            <Navbar />
+            <Hero />
+            <Separator />
+            <FeaturesSection />
+            <StatsSection />
+            <PrivacySection />
+            <CTASection />
+            <Footer />
+        </>
+    )
 }
