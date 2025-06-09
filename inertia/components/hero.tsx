@@ -8,7 +8,13 @@ export function Hero() {
     <section className="relative overflow-hidden py-28 px-6 md:px-12 lg:px-24 bg-gradient-to-b from-background to-muted/30">
       {/* Background visual elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 w-[120vw] h-[120vw] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-primary/5 to-transparent rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl opacity-70 animate-pulse" />
+        <div
+          className="absolute top-1/2 left-1/2 w-[150vw] h-[150vw] 
+          bg-[radial-gradient(circle_at_center,_theme(colors.slate.300),_theme(colors.slate.400),_theme(colors.slate.500))] 
+          dark:bg-[radial-gradient(circle_at_center,_theme(colors.slate.800),_theme(colors.slate.900),_transparent)] 
+          rounded-full -translate-x-1/2 -translate-y-1/2 
+          blur-[100px] opacity-60 dark:opacity-70 animate-pulse transition-colors"
+        />
       </div>
 
       <Sparkles />

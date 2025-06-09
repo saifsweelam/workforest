@@ -50,7 +50,7 @@ export function Navbar() {
           <NavigationMenu>
             <NavigationMenuList>
               {menuItems.map(({ label, href }) => (
-                <NavigationMenuLink asChild>
+                <NavigationMenuLink asChild key={href}>
                     <Link href={href} className="px-4 py-2 block">
                         {label}
                     </Link>
