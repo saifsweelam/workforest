@@ -52,7 +52,7 @@ export function Navbar() {
                         rel="noopener noreferrer"
                     >
                         <SiGithub className="w-6 h-6 text-primary inline mr-2" />
-                        Code on GitHub
+                        Source Code
                     </a>
                 </Button>
 

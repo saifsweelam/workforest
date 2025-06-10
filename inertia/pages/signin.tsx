@@ -1,34 +1,28 @@
-import {
-    Card,
-    CardContent,
-    CardHeader,
-    CardTitle,
-    CardFooter,
-} from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 
-import { motion } from "framer-motion"
-import { FaGithub, FaGoogle, FaLinkedin } from "react-icons/fa6"
-import { Head, Link } from "@inertiajs/react"
+import { motion } from 'framer-motion'
+import { FaGithub, FaGoogle, FaLinkedin } from 'react-icons/fa6'
+import { Head, Link } from '@inertiajs/react'
 
-export default function SignIn() {
+export default function SignInPage() {
     const providers = [
         {
-            name: "Google",
+            name: 'Google',
             icon: <FaGoogle className="w-5 h-5" />,
-            href: "/auth/google",
+            href: '/auth/google',
         },
         {
-            name: "GitHub",
+            name: 'GitHub',
             icon: <FaGithub className="w-5 h-5" />,
-            href: "/auth/github",
+            href: '/auth/github',
         },
         {
-            name: "LinkedIn",
+            name: 'LinkedIn',
             icon: <FaLinkedin className="w-5 h-5 text-[#0077b5]" />,
-            href: "/auth/linkedin",
+            href: '/auth/linkedin',
         },
     ]
 
@@ -76,19 +70,22 @@ export default function SignIn() {
 
                             <Separator className="my-2" />
                             <p className="text-xs text-muted-foreground text-center px-6">
-                                By signing in, you agree to our{" "}
-                                <a href="/terms" className="underline hover:text-primary">
+                                By signing in, you agree to our{' '}
+                                <Link href="/terms" className="underline hover:text-primary">
                                     Terms
-                                </a>{" "}
-                                and{" "}
-                                <a href="/privacy" className="underline hover:text-primary">
+                                </Link>{' '}
+                                and{' '}
+                                <Link href="/privacy" className="underline hover:text-primary">
                                     Privacy Policy
-                                </a>.
+                                </Link>
+                                .
                             </p>
                         </CardContent>
 
                         <CardFooter className="justify-center">
-                            <span className="text-sm text-muted-foreground">© {new Date().getFullYear()} Seif El-Din Sweilam</span>
+                            <span className="text-sm text-muted-foreground">
+                                © {new Date().getFullYear()} Seif El-Din Sweilam
+                            </span>
                         </CardFooter>
                     </Card>
                 </motion.div>
