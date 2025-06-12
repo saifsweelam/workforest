@@ -5,17 +5,17 @@ const allyConfig = defineConfig({
     github: services.github({
         clientId: env.get('GITHUB_CLIENT_ID'),
         clientSecret: env.get('GITHUB_CLIENT_SECRET'),
-        callbackUrl: '',
+        callbackUrl: 'http://localhost:3333/auth/github/callback',
     }),
     google: services.google({
         clientId: env.get('GOOGLE_CLIENT_ID'),
         clientSecret: env.get('GOOGLE_CLIENT_SECRET'),
-        callbackUrl: '',
+        callbackUrl: 'http://localhost:3333/auth/google/callback',
     }),
-    linkedinOpenidConnect: services.linkedinOpenidConnect({
-        clientId: env.get('LINKEDINOPENIDCONNECT_CLIENT_ID'),
-        clientSecret: env.get('LINKEDINOPENIDCONNECT_CLIENT_SECRET'),
-        callbackUrl: '',
+    linkedin: services.linkedin({
+        clientId: env.get('LINKEDIN_CLIENT_ID'),
+        clientSecret: env.get('LINKEDIN_CLIENT_SECRET'),
+        callbackUrl: 'http://localhost:3333/auth/linkedin/callback',
     }),
 })
 

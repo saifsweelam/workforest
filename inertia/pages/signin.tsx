@@ -56,9 +56,9 @@ export default function SignInPage() {
                                                 className="w-full flex items-center justify-center gap-2"
                                                 asChild
                                             >
-                                                <Link href={href}>
+                                                <a href={href} target='_blank' rel="noopener noreferrer">
                                                     {icon} Sign in with {name}
-                                                </Link>
+                                                </a>
                                             </Button>
                                         </TooltipTrigger>
                                         <TooltipContent>
