@@ -1,18 +1,18 @@
-import User from "#models/user";
-import { CreateUserPayload } from "#interfaces/users";
+import User from '#models/user'
+import { CreateUserPayload } from '#interfaces/users'
 
 export default class UsersService {
     async findOrCreateUser(data: CreateUserPayload) {
         const existingUser = await User.query()
             .where((query) => {
                 query.where('provider', data.provider)
-                query.andWhere('provider_id', data.providerId);
+                query.andWhere('provider_id', data.providerId)
             })
             .orWhere('email', data.email)
-            .first();
+            .first()
 
         if (existingUser) {
-            return existingUser;
+            return existingUser
         }
 
         const newUser = await User.create({
@@ -22,9 +22,9 @@ export default class UsersService {
             email: data.email,
             profilePicture: data.profilePicture,
             title: data.title,
-            yearsOfExperience: data.yearsOfExperience
-        });
+            yearsOfExperience: data.yearsOfExperience,
+        })
 
-        return newUser;
+        return newUser
     }
 }

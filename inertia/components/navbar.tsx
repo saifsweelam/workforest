@@ -12,11 +12,18 @@ import {
     NavigationMenuLink,
 } from '@/components/ui/navigation-menu'
 import User from '#models/user'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 export function Navbar() {
-    const { props: { user } } = usePage() as { props: { user: User } };
+    const {
+        props: { user },
+    } = usePage() as { props: { user: User } }
     const [isOpen, setIsOpen] = useState(false)
 
     // Menu items for logged out and logged in states
@@ -64,12 +71,16 @@ export function Navbar() {
                 {user ? (
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" className="flex items-center gap-2 px-2 py-1 h-auto">
+                            <Button
+                                variant="ghost"
+                                className="flex items-center gap-2 px-2 py-1 h-auto"
+                            >
                                 <Avatar className="h-8 w-8">
-                                    <AvatarImage src={user.profilePicture ?? undefined} alt={user.fullName ?? undefined} />
-                                    <AvatarFallback>
-                                        {user.fullName}
-                                    </AvatarFallback>
+                                    <AvatarImage
+                                        src={user.profilePicture ?? undefined}
+                                        alt={user.fullName ?? undefined}
+                                    />
+                                    <AvatarFallback>{user.fullName}</AvatarFallback>
                                 </Avatar>
                                 <span className="text-sm font-medium text-foreground hidden sm:inline">
                                     {user.fullName}
@@ -79,9 +90,7 @@ export function Navbar() {
 
                         <DropdownMenuContent align="end" className="w-48">
                             <DropdownMenuItem asChild>
-                                <Link href="/auth/logout">
-                                    Sign out
-                                </Link>
+                                <Link href="/auth/logout">Sign out</Link>
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
