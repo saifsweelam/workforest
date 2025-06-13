@@ -47,7 +47,7 @@ export function Hero() {
                     className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4"
                 >
                     <Button size="lg" className="group relative overflow-hidden" asChild>
-                        <Link href="/signin">
+                        <Link href="/auth/signin">
                             <span className="relative z-10 flex items-center gap-2">
                                 <Briefcase className="w-5 h-5" /> Get Started
                             </span>

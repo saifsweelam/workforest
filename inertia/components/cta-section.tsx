@@ -31,7 +31,7 @@ export function CTASection() {
                         className="text-lg font-semibold px-8 py-4 flex items-center gap-2"
                         asChild
                     >
-                        <Link href="/signin">
+                        <Link href="/auth/signin">
                             Get Started <ArrowRight className="w-5 h-5" />
                         </Link>
                     </Button>

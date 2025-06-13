@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 import { SiGithub } from 'react-icons/si'
 import { ThemeToggle } from './theme-toggle'
 import { Menu, X } from 'lucide-react'
-import { Link } from '@inertiajs/react'
+import { Link, usePage } from '@inertiajs/react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 import {
@@ -11,9 +11,12 @@ import {
     NavigationMenuList,
     NavigationMenuLink,
 } from '@/components/ui/navigation-menu'
+import User from '#models/user'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 export function Navbar() {
-    const [user] = useState<{ name: string } | null>(null)
+    const { props: { user } } = usePage() as { props: { user: User } };
     const [isOpen, setIsOpen] = useState(false)
 
     // Menu items for logged out and logged in states
@@ -59,16 +62,29 @@ export function Navbar() {
                 <ThemeToggle />
 
                 {user ? (
-                    <>
-                        <span className="text-sm font-medium text-foreground">{user.name}</span>
-                        <Button
-                            variant="outline"
-                            className={`px-4 py-2 ${mobile ? 'w-full' : ''}`}
-                            onClick={() => setIsOpen(false)}
-                        >
-                            Sign out
-                        </Button>
-                    </>
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" className="flex items-center gap-2 px-2 py-1 h-auto">
+                                <Avatar className="h-8 w-8">
+                                    <AvatarImage src={user.profilePicture ?? undefined} alt={user.fullName ?? undefined} />
+                                    <AvatarFallback>
+                                        {user.fullName}
+                                    </AvatarFallback>
+                                </Avatar>
+                                <span className="text-sm font-medium text-foreground hidden sm:inline">
+                                    {user.fullName}
+                                </span>
+                            </Button>
+                        </DropdownMenuTrigger>
+
+                        <DropdownMenuContent align="end" className="w-48">
+                            <DropdownMenuItem asChild>
+                                <Link href="/auth/logout">
+                                    Sign out
+                                </Link>
+                            </DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
                 ) : (
                     <Button
                         variant="default"
@@ -76,7 +92,7 @@ export function Navbar() {
                         onClick={() => setIsOpen(false)}
                         asChild
                     >
-                        <Link href="/signin">Sign in</Link>
+                        <Link href="/auth/signin">Sign in</Link>
                     </Button>
                 )}
             </>

@@ -155,7 +155,7 @@ export default function AboutPage() {
                     Ready to take control of your job hunt?
                 </h2>
                 <Button size="lg" className="px-10 py-6 text-base" asChild>
-                    <Link href="/signin">Get Started</Link>
+                    <Link href="/auth/signin">Get Started</Link>
                 </Button>
             </section>
         </div>

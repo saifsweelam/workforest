@@ -12,7 +12,7 @@ const allyConfig = defineConfig({
         clientSecret: env.get('GOOGLE_CLIENT_SECRET'),
         callbackUrl: 'http://localhost:3333/auth/google/callback',
     }),
-    linkedin: services.linkedin({
+    linkedin: services.linkedinOpenidConnect({
         clientId: env.get('LINKEDIN_CLIENT_ID'),
         clientSecret: env.get('LINKEDIN_CLIENT_SECRET'),
         callbackUrl: 'http://localhost:3333/auth/linkedin/callback',

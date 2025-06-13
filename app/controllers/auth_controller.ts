@@ -20,10 +20,6 @@ export default class AuthController {
       return response.redirect().toRoute('login');
     }
 
-    setTimeout(() => {
-      console.log('Auth callback stuck');
-    }, 5000);
-
     const user = await driver.user();
 
     const dbUser = await this.usersService.findOrCreateUser({
@@ -34,10 +30,18 @@ export default class AuthController {
       profilePicture: user.avatarUrl
     });
 
-    auth.use('web').login(dbUser);
+    console.log(dbUser);
 
-    return 'done';
-    // return response.redirect().toRoute('/');
+    await auth.use('web').login(dbUser);
+
+    console.log(auth.use('web').user);
+
+    return response.redirect().toRoute('/');
+  }
+
+  async logout({ auth, response }: HttpContext) {
+    await auth.use('web').logout();
+    return response.redirect().toRoute('/');
   }
 
 }
